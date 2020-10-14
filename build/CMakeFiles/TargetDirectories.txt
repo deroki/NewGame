@@ -1,0 +1,3 @@
+/home/carlos/Desktop/NewGame/build/CMakeFiles/rebuild_cache.dir
+/home/carlos/Desktop/NewGame/build/CMakeFiles/edit_cache.dir
+/home/carlos/Desktop/NewGame/build/CMakeFiles/NewGame.dir

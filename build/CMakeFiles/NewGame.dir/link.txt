@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/NewGame.dir/src/character.cpp.o CMakeFiles/NewGame.dir/src/controller.cpp.o CMakeFiles/NewGame.dir/src/game.cpp.o CMakeFiles/NewGame.dir/src/main.cpp.o CMakeFiles/NewGame.dir/src/renderer.cpp.o  -o NewGame  -lSDL2 
