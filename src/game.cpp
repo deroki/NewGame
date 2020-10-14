@@ -1,8 +1,10 @@
 #include "game.h"
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
-    : character(grid_width, grid_height)
-    {};
+    : grid_height(grid_height),
+      grid_width(grid_width)
+    {character = new Character(grid_width, grid_height, this);
+    }
 
 void Game::Run(Controller const &controller,
                Renderer &renderer,
@@ -13,9 +15,9 @@ void Game::Run(Controller const &controller,
     while(running){
         Uint32 start_time = SDL_GetTicks();
         //control - update - render  Loop
-        controller.HandleInput(character, running);
+        controller.HandleInput(*character, running);
         Update();
-        renderer.Render(character);
+        renderer.Render(*character);
         Uint32 end_time = SDL_GetTicks();
         //wait if the loop run faster than the fps desired
         Uint32 dif_time = end_time - start_time;

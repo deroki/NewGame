@@ -17,7 +17,7 @@ class Game {
 
     private:
         void Update();
-        Character character;
+        Character* character;
         std::size_t grid_width;
         std::size_t grid_height;
 
