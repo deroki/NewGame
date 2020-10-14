@@ -8,7 +8,7 @@ class Game;
 class Character{
     public:
         enum class Direction { KUp, KDown, KLeft, KRight};
-        Character(int grid_width, int grid_height, Game* game);
+        Character(Game* game);
         SDL_Point GetPosition() {return position;}
         void move(Direction direction);
 
@@ -22,4 +22,7 @@ class Character{
 
 };
 
+class Walker : public Character{
+
+};
 #endif

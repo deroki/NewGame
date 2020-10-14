@@ -1,10 +1,10 @@
 #include "character.h"
 #include "game.h"
 
-Character::Character(int grid_width, int grid_height, Game* game){
+Character::Character(Game* game){
     //TODO change initial the position 
-    position.x = grid_width / 2;
-    position.y = grid_height / 2;
+    position.x = game->GetHeight() / 2;
+    position.y = game->GetWidth() / 2;
     _game = game;
 }
 
@@ -19,7 +19,7 @@ void Character::move(Direction direction){
             position.y--;
         break;
     case Direction::KDown:
-        if ( position.y <= height - 1 ){
+        if ( position.y < height - 1 ){
             position.y++;
         }
         break;
@@ -28,7 +28,7 @@ void Character::move(Direction direction){
             position.x--;
         break;
     case Direction::KRight:
-        if (position.x <= width - 1 )
+        if (position.x < width - 1 )
             position.x++;
         break;
     

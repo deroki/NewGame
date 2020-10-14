@@ -3,7 +3,7 @@
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : grid_height(grid_height),
       grid_width(grid_width)
-    {character = new Character(grid_width, grid_height, this);
+    {character = new Character(this);
     }
 
 void Game::Run(Controller const &controller,
