@@ -19,6 +19,7 @@ class Game {
                std::size_t frame_duration);
         std::size_t GetWidth() {return grid_width;}
         std::size_t GetHeight() {return grid_height;}
+        bool position_used(int x, int y);
         
 
     private:

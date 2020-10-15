@@ -27,7 +27,6 @@ void Game::Run(Controller const &controller,
         Uint32 start_time = SDL_GetTicks();
         //control - update - render  Loop
         controller.HandleInput(*character, running);
-        Update();
         renderer.Render(*character, walker_vector) ;
         Uint32 end_time = SDL_GetTicks();
         //wait if the loop run faster than the fps desired
@@ -39,6 +38,14 @@ void Game::Run(Controller const &controller,
     }
 }
 
-void Game::Update(){
-
+bool Game::position_used(int x, int y){
+    if ( x == character->GetPosition().x && y == character->GetPosition().y ) {
+        return true;
+    } else {
+        for ( std::unique_ptr<Walker>& walker : walker_vector){
+            if ( x == walker->GetPosition().x && y == walker->GetPosition().y ){
+                return true;
+            }
+        }
+    }
 }

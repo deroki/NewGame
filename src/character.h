@@ -20,10 +20,8 @@ class Character{
         //float speed{0.1f};
 
     protected:
-        void Impact();
         SDL_Point position;
         Game* _game;
-
 };
 
 class Walker : public Character{

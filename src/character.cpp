@@ -9,36 +9,46 @@ Character::Character(Game* game){
     position.x = game->GetHeight() / 2;
     position.y = game->GetWidth() / 2;
     _game = game;
+
 }
 
 //TODO: check if the char impacts against another characters
 void Character::move(Direction direction){
     int height = static_cast<int>(_game->GetHeight());
     int  width = static_cast<int>(_game->GetWidth());
+    int x = position.x;
+    int y = position.y;
+
     switch (direction)
     {
     case Direction::KUp:
-        if (position.y >= 1 )
-            position.y--;
+        if (y >= 1 )
+            y--;
         break;
     case Direction::KDown:
-        if ( position.y < height - 1 ){
-            position.y++;
+        if ( y < height - 1 ){
+            y++;
         }
         break;
     case Direction::KLeft:
-        if (position.x >= 1 )
-            position.x--;
+        if (x >= 1 )
+            x--;
         break;
     case Direction::KRight:
-        if (position.x < width - 1 )
-            position.x++;
+        if (x < width - 1 )
+            x++;
         break;
     
     default:
         break;
     }
+    if( !_game->position_used(x, y)){
+        position.x = x;
+        position.y = y;
+    }
 }
+
+
 
 // =================================== WALKER ================================== //
 // we call the character mother class constructor in a initialized class
@@ -89,33 +99,39 @@ void Walker::Random_movement(){
 
 //TODO does it moves ok in the edges?
 void Walker::walk_steps_to_direction(int num_steps, Direction direction){
+    int x = position.x;
+    int y = position.y;
     for (int i = 0; i < num_steps; i++){
         switch(direction){
             case Direction::KUp:
-                position.y--;
+                y--;
                 break;
             case Direction::KDown:
-                position.y++;
+                y++;
                 break;
             case Direction::KLeft:
-                position.x--;
+                x--;
                 break;
             case Direction::KRight:
-                position.x++;
+                x++;
                 break;
         }
         if (direction == Direction::KDown || direction == Direction::KUp){
-            if (position.y == _game->GetHeight() + 1 ) 
-                position.y = 1;
-            if (position.y == -1) 
-                position.y = _game->GetHeight();
+            if (y == _game->GetHeight() + 1 ) 
+                y = 1;
+            if (y == -1) 
+                y = _game->GetHeight();
         }   
         if (direction == Direction::KLeft || direction == Direction::KRight){
-            if (position.x == _game->GetWidth() + 1 ) 
-                position.x = 1;
-            if (position.x == -1) 
-                position.x = _game->GetWidth();
+            if (x == _game->GetWidth() + 1 ) 
+                x = 1;
+            if (x == -1) 
+                x = _game->GetWidth();
         }
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        if( !_game->position_used(x, y)) {
+        position.x = x;
+        position.y = y;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
 }
