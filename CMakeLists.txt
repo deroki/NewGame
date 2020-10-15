@@ -7,14 +7,17 @@ set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 
-project(SDL2Test)
+project(NewGame)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 find_package(SDL2 REQUIRED)
+find_package( Threads )
+
 include_directories(${SDL2_INCLUDE_DIRS} src)
 file(GLOB SOURCES "src/*.cpp")
 
 add_executable(NewGame ${SOURCES})
 string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
 target_link_libraries(NewGame ${SDL2_LIBRARIES})
+target_link_libraries( ${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT} )

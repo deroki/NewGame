@@ -11,7 +11,7 @@ class Renderer {
                  const std::size_t grid_width, const std::size_t grid_height);
         ~Renderer();
 
-        void Render(Character character);
+        void Render(Character character, std::vector< std::unique_ptr<Walker> >& walker_vec);
         void UpdateWindowTitle(int score, int fps);
 
     private:

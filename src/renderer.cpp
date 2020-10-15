@@ -45,7 +45,7 @@ Renderer::~Renderer(){
     SDL_Quit();
 }
 
-void Renderer::Render(Character character){
+void Renderer::Render(Character character,  std::vector< std::unique_ptr<Walker> >& walker_vec){
     SDL_Rect block;
     block.w = screen_width / grid_width;
     block.h = screen_heigth / grid_height;
@@ -59,6 +59,15 @@ void Renderer::Render(Character character){
     block.x = character.GetPosition().x * block.w;
     block.y = character.GetPosition().y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
+
+    //render walker vector
+    for (auto &walker : walker_vec){
+      SDL_SetRenderDrawColor(sdl_renderer, 200, 200, 200, 0xFF);
+      block.x = walker->GetPosition().x * block.w;
+      block.y = walker->GetPosition().y * block.h;
+      SDL_RenderFillRect(sdl_renderer, &block);
+
+    }
 
     //Update Screen
     SDL_RenderPresent(sdl_renderer);
