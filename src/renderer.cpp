@@ -62,7 +62,7 @@ void Renderer::Render(Character character,  std::vector< std::unique_ptr<Walker>
 
     //render walker vector
     for (auto &walker : walker_vec){
-      SDL_SetRenderDrawColor(sdl_renderer, 200, 200, 200, 0xFF);
+      SDL_SetRenderDrawColor(sdl_renderer, 255, 233, 0, 0xFF);
       block.x = walker->GetPosition().x * block.w;
       block.y = walker->GetPosition().y * block.h;
       SDL_RenderFillRect(sdl_renderer, &block);
