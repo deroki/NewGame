@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#define     WALKERS     20
+
 #include "character.h"
 #include "renderer.h"
 #include "controller.h"
@@ -9,6 +11,8 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+
+
 
 class Game {
     public:

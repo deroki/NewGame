@@ -6,9 +6,11 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
     {
         character = new Character(this);
         //add walkers
-        std::unique_ptr<Walker> newWalker (new Walker(this));
-        newWalker->Start_walking_thread();
-        walker_vector.emplace_back(std::move(newWalker));
+        for (int i=0; i<WALKERS; i++){
+            std::unique_ptr<Walker> newWalker (new Walker(this));
+            newWalker->Start_walking_thread();
+            walker_vector.emplace_back(std::move(newWalker));
+        }
 
     }
 

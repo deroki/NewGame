@@ -2,8 +2,12 @@
 #include "renderer.h"
 #include "controller.h"
 #include "game.h"
+#include <ctime>
+#include <chrono>
+
 int main(){
     //values for the game
+    srand((unsigned) time(0));
     constexpr std::size_t KFps {60};
     constexpr std::size_t KMsPerFrame {1000/ KFps};
     constexpr std::size_t KScreen_width{640};

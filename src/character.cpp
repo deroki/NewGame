@@ -53,8 +53,6 @@ void Character::move(Direction direction){
 // =================================== WALKER ================================== //
 // we call the character mother class constructor in a initialized class
 Walker::Walker(Game* game):Character(game){
-    //random initial position
-    srand((unsigned) time(0));
     int x = ( rand() % game->GetHeight() ) + 1;
     int y = ( rand() % game->GetWidth() ) + 1;
     position.x = x;
@@ -76,7 +74,6 @@ void Walker::Walking_loop(){
 }
 
 void Walker::Random_movement(){
-    srand((unsigned) time(0));
     int random_number = (rand() % 4) + 1;
     int random_steps = (rand() % 4) + 1;
     switch(random_number){

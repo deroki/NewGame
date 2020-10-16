@@ -6,8 +6,10 @@ class Game;
 #include "SDL.h"
 #include <thread>
 
+
 #define     FORWARD     1
 #define     BACKWARD    2    
+
 
 class Character{
     public:
