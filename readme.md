@@ -17,15 +17,15 @@ This is an easy way to see how health recommendation could be visualized so a pe
 
 The game structure is almost the same as snake game:
 
-1. Character: there are you kind of characters:
-    * character: the main pixel moving
+1. Character: there are two kind of characters:
+    * character: the main player pixel moving
     * walker: a random computer managed random character that affects the player
 
-2. Controller: this object controls all the inputs from the keyboard and change the character position
+2. Controller: This object controls all the inputs from the keyboard and change the character position
 
-3. Renderer: Ojects that display the changes on the screen using the SDL2 library 
+3. Renderer: Objects that display the changes on the screen using the SDL2 library 
 
-4. Game : implement all the game logic and the game loop
+4. Game : Implements all the game logic and the game loop
 
 ## Dependencies
 
@@ -101,12 +101,9 @@ The game structure is almost the same as snake game:
 
 ### 6. Concurrency
 
-* The project uses multithreading
-- [X]I used non efficient way but for the sake of it I wanted to play, so I implemented one thread in every walker that chanes randomly the movement `character.cpp:67`
+- [X]  The project uses multithreading
+    * I have used non efficient way but for the sake of it I wanted to play, so I implemented one thread in every walker that chanes randomly the movement `character.cpp:67`
 - [ ] A promise and future is used in the project
 - [ ] A mutex or lock is used in the project
-  * No.
-- [ ]A condition variable is used in the project
-  * No.
-
+- [ ] A condition variable is used in the project
 
