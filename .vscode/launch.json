@@ -8,7 +8,7 @@
             "name": "g++ - debug NewGame",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/build/NewGame",
+            "program": "${workspaceRoot}/build/PandemicRoom",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

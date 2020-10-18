@@ -1,6 +1,6 @@
 # Capstone Project Udacity C++ Nanodegree
 
-Based in the Udacity Snake Game code but code from zero, I implemented a pseudogame where you can move a character and see how the the effects of time and distance to people in a room can change the viral load so you could get Ill.
+Based in the Udacity Snake Game code but coded from zero, I implemented a pseudogame where you can move a character and see how the the effects of time and distance to a person in a room can change the viral load in its body.
 
 This is an easy way to see how health recommendation could be visualized so a person could be aware of the importance of follow them.
 
@@ -9,9 +9,9 @@ This is an easy way to see how health recommendation could be visualized so a pe
 
 ## Project description
 
-*The game is easy to play, you input the number of walkers you want to see in the screen, then you are the white pixel that can move up, down, left, right with the arrow keys and you should avoid the walkers that could be infected.
+* The game is easy to play, you input the number of walkers you want to see in the screen, then you are the white pixel that can move up, down, left, right with the arrow keys and you should avoid the walkers that could be infected.
 
-*While moving around the room, you can see the viral load incrementing, this acelerated when you are close to any other walker in the room, or you are near a group of walkers.
+* While moving around the room, you can see the viral load incrementing, this acelerated when you are close to any other walker in the room, or you are near a group of walkers.
 
 ## Project structure
 
@@ -19,7 +19,7 @@ The game structure is almost the same as snake game:
 
 1. Character: there are you kind of characters:
     * character: the main pixel moving
-    * walker: a random computer managed random walker that have some viral load
+    * walker: a random computer managed random character that affects the player
 
 2. Controller: this object controls all the inputs from the keyboard and change the character position
 
@@ -64,7 +64,7 @@ The game structure is almost the same as snake game:
 - [X] The project demonstrates an understanding of C++ functions and control structures
 - [ ] The project reads data from a file and process the data, or the program writes data to a file
 - [X] The project accepts user input and processes the input
-    * In the begginin it ask you for the number of walkers you would face in the simulation
+    * In the beginning it ask you for the number of walkers you would face in the simulation
 
 
 ### 4. Object Oriented Programming

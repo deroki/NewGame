@@ -61,6 +61,7 @@ Walker::Walker(Game* game):Character(game){
 }
 
 Walker::~Walker(){
+    delete Movement_Thread;
 }
 
 void Walker::Start_walking_thread(){
