@@ -3,6 +3,9 @@
 
 CMakeFiles/NewGame.dir/src/character.cpp.o: ../src/character.cpp
 CMakeFiles/NewGame.dir/src/character.cpp.o: ../src/character.h
+CMakeFiles/NewGame.dir/src/character.cpp.o: ../src/controller.h
+CMakeFiles/NewGame.dir/src/character.cpp.o: ../src/game.h
+CMakeFiles/NewGame.dir/src/character.cpp.o: ../src/renderer.h
 CMakeFiles/NewGame.dir/src/character.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/NewGame.dir/src/character.cpp.o: /usr/include/SDL2/SDL_assert.h
 CMakeFiles/NewGame.dir/src/character.cpp.o: /usr/include/SDL2/SDL_atomic.h

@@ -4,6 +4,9 @@
 CMakeFiles/NewGame.dir/src/character.cpp.o
  /home/carlos/Desktop/NewGame/src/character.cpp
  /home/carlos/Desktop/NewGame/src/character.h
+ /home/carlos/Desktop/NewGame/src/controller.h
+ /home/carlos/Desktop/NewGame/src/game.h
+ /home/carlos/Desktop/NewGame/src/renderer.h
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_assert.h
  /usr/include/SDL2/SDL_atomic.h

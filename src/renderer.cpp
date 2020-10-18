@@ -45,7 +45,7 @@ Renderer::~Renderer(){
     SDL_Quit();
 }
 
-void Renderer::Render(Character character){
+void Renderer::Render(Character character,  std::vector< std::unique_ptr<Walker> >& walker_vec){
     SDL_Rect block;
     block.w = screen_width / grid_width;
     block.h = screen_heigth / grid_height;
@@ -60,12 +60,26 @@ void Renderer::Render(Character character){
     block.y = character.GetPosition().y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
 
+    //render walker vector
+    for (auto &walker : walker_vec){
+      SDL_SetRenderDrawColor(sdl_renderer, 255, 233, 0, 0xFF);
+      block.x = walker->GetPosition().x * block.w;
+      block.y = walker->GetPosition().y * block.h;
+      SDL_RenderFillRect(sdl_renderer, &block);
+
+    }
+
     //Update Screen
     SDL_RenderPresent(sdl_renderer);
 
 }
 
-void Renderer::UpdateWindowTitle(int score, int fps){
+void Renderer::UpdateWindowTitle(float score, int fps){
     std::string title{"Viral load" + std::to_string(score) + "FPS" + std::to_string(fps)};
+    SDL_SetWindowTitle(sdl_window, title.c_str());
+}
+
+void Renderer::UpdateWindowTitle(float score){
+    std::string title{"Viral load    " + std::to_string(score)};
     SDL_SetWindowTitle(sdl_window, title.c_str());
 }
